@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CoursesComponent } from './components/courses/courses.component';
+import { YoutubeComponent } from './components/youtube/youtube.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    CoursesComponent,
+    YoutubeComponent
   ],
   imports: [
     BrowserModule,
