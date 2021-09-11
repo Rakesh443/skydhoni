@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { YoutubeComponent } from './components/youtube/youtube.component';
+import { urlPipe } from './components/youtube/urlPipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { YoutubeComponent } from './components/youtube/youtube.component';
     NavbarComponent,
     FooterComponent,
     CoursesComponent,
-    YoutubeComponent
+    YoutubeComponent,
+    urlPipe
   ],
   imports: [
     BrowserModule,
