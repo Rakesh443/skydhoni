@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
 import { Router } from '@angular/router';
 import { YoutubeService } from '../youtube/youtube.service';
 import { Course } from 'src/app/models/course.model';
@@ -26,11 +23,11 @@ export class CoursesComponent implements OnInit {
     // this.http.get('http://localhost:9000/courses').subscribe((data)=>{
     //   this.cos=data as Course
     // })
-      let course1 = new Course("1", 'Maths1','Maths1 video','assets/img/mqdefault_6s.webp',"https://www.youtube.com/embed/doTywG3khQY");
+      let course1 = new Course("1", 'Maths1','Maths1 video betbfgd ghjklk cjkal asfjkalf ffjkf fjkldkdndnvdkvndkvndkvndkvndvndndkvndvndvndkvndndknvndndfndfknwfw ffnwkfwffnwklfv','assets/img/mqdefault_6s.webp',"https://www.youtube.com/embed/doTywG3khQY");
       this.courses1.push(course1)
-      let course2 = new Course("2",'Maths2','Maths2 video','assets/img/mqdefault_6s.webp',"https://www.youtube.com/embed/sshmTpPn1Do")
+      let course2 = new Course("2",'Maths2','Maths2 video betbfgd ghjklk cjkal asfjkalf ffjkf fjklwfw ffnwkfwffnwklfv','assets/img/mqdefault_6s.webp',"https://www.youtube.com/embed/sshmTpPn1Do")
       this.courses1.push(course2)
-      let course3 = new Course("3",'Maths3','Maths3 video','assets/img/mqdefault_6s.webp',"https://www.youtube.com/watch?v=-qkfZ5R70vY")
+      let course3 = new Course("3",'Maths3','Maths3 video betbfgd ghjklk cjkal asfjkalf ffjkf fjklwfw ffnwkfwffnwklfv','assets/img/mqdefault_6s.webp',"https://www.youtube.com/watch?v=-qkfZ5R70vY")
       this.courses1.push(course3)
 
   }

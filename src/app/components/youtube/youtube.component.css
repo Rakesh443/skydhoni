@@ -1,0 +1,13 @@
+.youtube{
+    display: flex;
+}
+youtubePlaylist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: auto;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}

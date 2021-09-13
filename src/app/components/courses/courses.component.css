@@ -1,6 +1,8 @@
 .course{
     background-color: rgb(224, 226, 241);
     padding: 50px 100px;
+    display: flex;
+    flex-wrap: wrap;
 } 
 .box{
     background-color: white;
@@ -12,4 +14,8 @@
         background-color: rgb(224, 226, 241);
         padding: 50px 10px;
     }
+}
+
+.custom{
+    word-wrap: break-word;
 }

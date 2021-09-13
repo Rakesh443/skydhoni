@@ -1,0 +1,7 @@
+<div id="content-box" class = "youtube">
+   <ul class="content-holder" *ngFor = "let cs of videosList">
+      <a class="content-holder-item active" (click)=changeVideo(cs)>
+         {{cs.name}} <br>
+         </a>{{cs.desc}}
+   </ul>
+</div>

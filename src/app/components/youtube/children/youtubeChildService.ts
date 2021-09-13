@@ -1,21 +1,28 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Course } from 'src/app/models/course.model';
 
 
 @Injectable({
     providedIn: 'root'
   })
-  export class YoutubeService {
+  export class YoutubeChildService {
+
+
+    @Output()
+    public childEvent = new EventEmitter();
+
     course!: Course;
     constructor( ) { }
+
 
     getCourse(){
         return this.course
     }
 
     setCourse(course:Course){
-      console.log("inside ytService")
         this.course=course
+       
     }
+    
+
   }

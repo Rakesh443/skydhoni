@@ -3,10 +3,10 @@
         <h1 class="text-center">All Courses</h1>
         <div class="row mt-5" >
             <div class="col-lg-3 mb-5" *ngFor = "let cs of courses1">
-                <div class="box shadow-sm">
+                <div class="box shadow-sm custom">
                     <img src="{{cs.image}} " width="100%">
                     <h3 class="mt-2">{{cs.name}}</h3>
-                    <p class="mt-2">{{cs.desc}}</p>
+                    <p class="mt-2 " >{{cs.desc}}</p>
                     <button class="btn btn-primary btn-sm mt-2" (click)="gotoYoutube(cs)">Start Now</button>
                 </div>
             </div>
