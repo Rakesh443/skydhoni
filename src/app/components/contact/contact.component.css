@@ -1,0 +1,51 @@
+
+div{
+    display: flex;
+    padding:5px;
+}
+
+
+.list{
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   border: 1px solid ;
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+}
+
+mat-list-item{
+    border: 1px solid;
+    margin: 0.5em;
+    padding: 0.5em;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    text-align: -webkit-match-parent;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+@media only screen and (max-width: 400px){
+    .scroll,.list {
+        height: 70vh;
+        visibility: hidden;
+    }
+}
+.scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 286px;
+    border: 1px black solid;
+    padding: 2%;
+    width: 500px;
+    margin: 0 auto;
+    font-size: large
+}
+
+.mat-tab-group {
+    margin-bottom: 48px;
+  }
+  

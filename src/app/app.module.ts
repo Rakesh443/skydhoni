@@ -11,6 +11,13 @@ import { urlPipe } from './components/youtube/urlPipe';
 import { ListComponent } from './components/youtube/children/list/list.component';
 import { VideoInfoComponent } from './components/youtube/children/video-info/video-info.component';
 import { PlayComponent } from './components/youtube/children/play/play.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatListModule} from '@angular/material/list';
+import {AngularFireModule} from '@angular/fire'
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule} from '@angular/fire/firestore'
 
 @NgModule({
   declarations: [
@@ -22,11 +29,17 @@ import { PlayComponent } from './components/youtube/children/play/play.component
     urlPipe,
     ListComponent,
     VideoInfoComponent,
-    PlayComponent
+    PlayComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatTabsModule,
+    BrowserAnimationsModule,
+    MatListModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
