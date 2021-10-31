@@ -11,6 +11,11 @@
     padding: 10px 20px ;
 }
 
+.ud{
+    width: 100%;
+    height: 100%;
+}
+
 /* 
 .list{
    list-style: none;

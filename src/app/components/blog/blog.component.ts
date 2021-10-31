@@ -20,12 +20,14 @@ export class BlogComponent implements OnInit {
     this.s=course.playlist[0];
     course.playlist.forEach(element => {
       
-      this.list.push("Video "+this.count);
+      this.list.push(`Video ${this.count}`);
       this.count++;
     });
     
     this.list=course.playlist;
 
   }
+
+
 
 }

@@ -16,9 +16,9 @@ export class ContactComponent implements OnInit {
   constructor() {   }
   db=firebase.firestore()
   ngOnInit(): void {
-    // this. getCourse()
+    this. getCourse()
     
-    // this.getvideoList()
+    this.getvideoList()
     
   }
 

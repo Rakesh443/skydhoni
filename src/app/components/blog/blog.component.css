@@ -29,10 +29,10 @@ li{
 }
 .flex-container{
     display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    flex-direction: row;
     /* -ms-flex-align:start; */
-    /* justify-content: space-between; */
+    justify-content: space-between;
     /* height: 268px; */
 }
 .flex-item{
