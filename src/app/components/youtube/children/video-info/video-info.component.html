@@ -5,4 +5,9 @@
 </button>
 
 
+<cdk-virtual-scroll-viewport itemSize="50" class="container">
+  <div class="number" *cdkVirtualFor = "let i of items">
+    {{i}}
+  </div>
+</cdk-virtual-scroll-viewport>
 

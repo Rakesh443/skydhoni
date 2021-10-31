@@ -11,3 +11,47 @@ youtubePlaylist{
     margin-right: auto;
     margin-left: auto;
 }
+.box{
+    display: flex;
+    padding:5px;
+    background-color: white;
+    padding: 10px 20px ;
+}
+
+
+.containers{
+    height: 286px;
+}
+.number{
+    justify-content:start;
+    align-items:center;
+    border: 2px solid black;
+    box-sizing: border-box;
+    height: 50px;
+    
+}
+
+@media screen and (max-width:600px){
+    .customweb{
+        visibility: hidden;
+        display: none;
+        background-color: rgb(224, 226, 241);
+        padding: 50px 10px;
+        font-size: 0px;
+    }
+    .container{
+        visibility: hidden;
+    }
+}
+.custom{
+    visibility: hidden;
+}
+@media screen and (max-width:600px){
+    .custom{
+        visibility: visible;
+        background-color: rgb(224, 226, 241);
+        padding: 50px 10px;
+    }
+}
+
+

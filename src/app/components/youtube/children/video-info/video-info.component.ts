@@ -8,12 +8,16 @@ import { Course } from 'src/app/models/course.model';
 })
 export class VideoInfoComponent implements OnInit {
 
+
+  items = Array.from({length: 9}).map((_, i) => `Item #${i}`);
+
   @Input()
   parentData!: Course;
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
   downloadPdf(base64String: string, fileName: string) {
     const source = "assets/pdf/pdf1.pdf"

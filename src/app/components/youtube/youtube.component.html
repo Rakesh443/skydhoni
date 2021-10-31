@@ -1,6 +1,50 @@
-<div class = "youtube">
+<!-- <div class = "youtube">
    <app-play [parentData] = "course"></app-play>
    <app-list (childEvent)="course=$event" [parentData] = "course" class="youtubePlaylist"></app-list>
    
 </div>
-<app-video-info [parentData] = "course"></app-video-info>
+<app-video-info [parentData] = "course"></app-video-info> -->
+
+<div class="box">
+   <iframe width="1040" height="386" [src]="s | safe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <cdk-virtual-scroll-viewport itemSize="50" class="container">
+      <div class="number" *cdkVirtualFor = "let i of items">
+        {{i}}
+      </div>
+    </cdk-virtual-scroll-viewport>
+</div>
+
+<div>
+  <button (click)="onClickDownloadPdf()">
+    Download PDF
+  </button>
+  <div class="customweb">
+    <h2>{{courses.name}}</h2>
+    <p>{{courses.desc}}</p>
+  </div>
+</div>
+
+<mat-tab-group mat-stretch-tabs class="example-stretched-tabs custom mat-elevation-z4">
+  
+  <mat-tab label="Content"> 
+    <div >
+      <h2>{{courses.name}}</h2>
+      <p>{{courses.desc}}</p>
+    </div>
+  </mat-tab>
+  <mat-tab label="Play List">
+    <app-list ></app-list>
+  </mat-tab>
+  <mat-tab label="Third"> 
+    <div height="300px">
+      <cdk-virtual-scroll-viewport itemSize="50" class="container">
+        <div class="number" *cdkVirtualFor = "let i of items">
+          {{i}}
+        </div>
+      </cdk-virtual-scroll-viewport> 
+    </div>
+     
+  </mat-tab>
+</mat-tab-group>
+
+

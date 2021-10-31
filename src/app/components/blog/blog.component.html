@@ -1,0 +1,32 @@
+<div class = " flex-container">
+    <div class= "flex-item item1">
+        <!-- <iframe width="1040" height="386" [src]="s | safe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <iframe class = "ud" [src]="s | safe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </div>
+
+    <div class = "scroll flex-item item2">
+        <ul *ngFor="let i of list">
+            <li>{{i}}</li>            
+        </ul>
+    </div>
+</div>
+<!-- 
+<div class="flex-container">
+    
+    <iframe class="flex-item item1" src="dfghjkl;lkjhgfdfghjkl;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    <div class="flex-item item2" >
+        <ul class = "scroll flex-item">
+            <li>i</li>
+            <li>i</li>
+            <li>i</li>
+            <li>i</li>
+            <li>i</li>
+            <li>i</li>
+            <li>i</li>
+                      
+        </ul>
+    </div>
+</div> -->
+<!-- *ngFor="let i of list" -->

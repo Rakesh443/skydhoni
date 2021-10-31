@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Course } from 'src/app/models/course.model';
+import { Courses } from 'src/app/models/courses.model';
 import { YoutubeService } from '../../youtube.service';
 import { YoutubeChildService } from '../youtubeChildService';
 
@@ -11,26 +12,33 @@ import { YoutubeChildService } from '../youtubeChildService';
 export class ListComponent implements OnInit {
 
 
-  @Input()
-  parentData!: Course;
+  // @Input()
+  // parentData!: Courses;
 
-  @Output()
-  public childEvent = new EventEmitter();
+  // @Output()
+  // public childEvent = new EventEmitter();
    
-   videosList:Array<Course>=[]
-   course:Course=new Course("100","Mathe5","sdkj urfh ghw ruig rge r gu yg yu","dfghjklkjhg","dfghjklkjhgfcvghjkjhg")
+   videosList:string[]=[]
+   course:Courses=new Courses
   constructor(private service:YoutubeService) { }
 
   ngOnInit(): void {
-    this.videosList.push(this.parentData)
-    this.videosList.push(this.course)
-    this.videosList.push(this.parentData)
-    this.videosList.push(this.parentData)
+    console.log("welcomr")
+    this.course=this.service.getCourse()
+
+    // setTimeout(() => {
+    //   this.videosList=this.course.playlist;
+    //   console.log(this.course.name)
+    // }, 3000);
+  
+
+  // this.videosList=this.course.playlist
+    
   }
 
-  changeVideo(course:Course){
-    console.log(course.name)
-    this.childEvent.emit(course)
+  changeVideo(courselink:string){
+    console.log(courselink)
+    this.service.setVideolink(courselink)
   }
 
 }

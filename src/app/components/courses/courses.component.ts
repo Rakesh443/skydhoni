@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { YoutubeService } from '../youtube/youtube.service';
 import { Course } from 'src/app/models/course.model';
+import 'firebase/firestore';
+import firebase from 'firebase/app';
+import { environment } from 'src/environments/environment';
+import { Courses } from 'src/app/models/courses.model';
+
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
@@ -10,43 +15,37 @@ import { Course } from 'src/app/models/course.model';
 export class CoursesComponent implements OnInit {
 
 
-
+  // f=firebase.initializeApp(environment.firebaseConfig)
   constructor(private router:Router, private youtubeService:YoutubeService) { }
 
-  // db=firebase.firestore();
+  db=firebase.firestore();
   cos:any=[]
-  courses1:Array<Course>=[]
+  coursesArray: Courses[]=[]
 
   // course: Course = new Course;
   ngOnInit(): void {
-    // this. getCourse()
-    // this.http.get('http://localhost:9000/courses').subscribe((data)=>{
-    //   this.cos=data as Course
-    // })
-      let course1 = new Course("1", 'Maths1','Maths1 video betbfgd ghjklk cjkal asfjkalf ffjkf fjkldkdndnvdkvndkvndkvndkvndvndndkvndvndvndkvndndknvndndfndfknwfw ffnwkfwffnwklfv','assets/img/mqdefault_6s.webp',"https://www.youtube.com/embed/doTywG3khQY");
-      this.courses1.push(course1)
-      let course2 = new Course("2",'Maths2','Maths2 video betbfgd ghjklk cjkal asfjkalf ffjkf fjklwfw ffnwkfwffnwklfv','assets/img/mqdefault_6s.webp',"https://www.youtube.com/embed/sshmTpPn1Do")
-      this.courses1.push(course2)
-      let course3 = new Course("3",'Maths3','Maths3 video betbfgd ghjklk cjkal asfjkalf ffjkf fjklwfw ffnwkfwffnwklfv','assets/img/mqdefault_6s.webp',"https://www.youtube.com/watch?v=-qkfZ5R70vY")
-      this.courses1.push(course3)
-
+    this. getCourse()
   }
   
 
-  // getCourse()
-    // console.log(this.courseForm.value.courseName)
-  //   this.db.collection("courses").get().then((data) => {
-  //     data.forEach((doc)=> {
-  //       this.courses1.push(doc.data())
-  //       console.log(doc.data())
-  //     })
-  //   })
+  getCourse(){
+    this.db.collection('Course').get().then((data)=>{
+      data.forEach((doc)=>{
+          let cos = new Courses
+          cos._id=doc.id;
+          cos.name=doc.data().name;
+          cos.desc= doc.data().description;
+          cos.playlist = doc.data().playlist;
+        this.coursesArray.push(cos)
+        console.log(doc.id)
+      })
+    })
+  }
 
-  // }
 
-  gotoYoutube(course:Course){
+  gotoYoutube(course:Courses){
      this.youtubeService.setCourse(course)
-     this.router.navigateByUrl('/youtube')
+     this.router.navigateByUrl('/blogs')
   }
 
   courses=[

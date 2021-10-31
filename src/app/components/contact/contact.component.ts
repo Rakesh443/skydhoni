@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import 'firebase/firestore';
-import { AngularFirestore } from '@angular/fire/firestore';
 import firebase from 'firebase/app';
-import { FirebaseApp } from '@angular/fire';
-import { environment } from 'src/environments/environment';
-import { Course } from 'src/app/models/course.model';
 import { Courses } from 'src/app/models/courses.model';
-// import 'firebase/firestore';
 
 @Component({
   selector: 'app-contact',
@@ -16,27 +11,42 @@ import { Courses } from 'src/app/models/courses.model';
 export class ContactComponent implements OnInit {
 
 
-  
+  items:string[] = Array.from({length: 100}).map((_, i) => `Item #${i}`);
   coursesArray: Courses[]=[]
   constructor() {   }
-  f=firebase.initializeApp(environment.firebaseConfig)
   db=firebase.firestore()
   ngOnInit(): void {
-    this. getCourse()
+    // this. getCourse()
+    
+    // this.getvideoList()
     
   }
 
   getCourse(){
+    // this.items = Array.from({length: 100}).map((_, i) => `Item #${i}`);
     this.db.collection('Course').get().then((data)=>{
       data.forEach((doc)=>{
           let cos = new Courses
           cos._id=doc.id;
           cos.name=doc.data().name;
           cos.desc= doc.data().description;
-          cos.platlist = doc.data().plalist;
+          this.items=doc.data().playlist;
         this.coursesArray.push(cos)
-        console.log(doc.id)
+        console.log(this.coursesArray.length)
       })
     })
-}
+    
+  }
+
+  getvideoList(){
+    setTimeout(() => {
+      console.log(this.coursesArray.length)
+      let s=this.coursesArray[0]._id
+    // s='Course/'+s;
+    // console.log(this.db.collection("Course").get(s))
+    }, 3000);
+    
+    
+  }
+
 }

@@ -18,6 +18,8 @@ import { MatListModule} from '@angular/material/list';
 import {AngularFireModule} from '@angular/fire'
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule} from '@angular/fire/firestore'
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { AngularFirestoreModule} from '@angular/fire/firestore'
     ListComponent,
     VideoInfoComponent,
     PlayComponent,
-    ContactComponent
+    ContactComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { AngularFirestoreModule} from '@angular/fire/firestore'
     BrowserAnimationsModule,
     MatListModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

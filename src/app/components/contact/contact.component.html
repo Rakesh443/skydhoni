@@ -1,7 +1,7 @@
 <p>contact works!</p>
 
-<div >
-    <iframe width="540" height="286" src="https://www.youtube.com/embed/-mJFZp84TIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <!-- <iframe width="540" height="286" src="https://www.youtube.com/embed/-mJFZp84TIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
     <!-- <ul *ngFor ="let cs of coursesArray">
         <li>{{cs.name}}</li>  
     </ul> -->
@@ -13,11 +13,23 @@
       
   </ul> -->
 
-  <mat-list class="inline-list scroll">
-    <mat-list-item  *ngFor="let cs of coursesArray"> {{cs.name}} {{cs.desc}}
-      
+  <!-- <mat-list class="inline-list scroll list">
+    <mat-list-item  class="list-item " *ngFor="let cs of coursesArray"> 
+     <div class="box shadow-sm custom">
+        <h5>{{cs.name}}</h5>
+        <br>
+        <p>{{cs.desc}}</p>
+     </div>      
     </mat-list-item>
-  </mat-list>
+  </mat-list> -->
+<div class="box">
+
+  <cdk-virtual-scroll-viewport itemSize="50" class="container">
+    
+    <div class="number" *cdkVirtualFor = "let i of items">
+      {{i}}
+    </div>
+  </cdk-virtual-scroll-viewport>
 </div>
 
 <!-- <mat-tab-group mat-align-tabs="center" >
@@ -25,7 +37,7 @@
     <mat-tab label="Second">Content 2</mat-tab>
     <mat-tab label="Third">Content 3</mat-tab>
   </mat-tab-group> -->
-  <ul class="nav nav-tabs">
+  <!-- <ul class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="#">Active</a>
     </li>
@@ -38,4 +50,4 @@
     <li class="nav-item">
       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
     </li>
-  </ul>
+  </ul> -->
